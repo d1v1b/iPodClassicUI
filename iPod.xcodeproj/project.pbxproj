@@ -13,8 +13,6 @@
 		D448386F2435F03600EC3DFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D448386E2435F03600EC3DFE /* Assets.xcassets */; };
 		D44838722435F03600EC3DFE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D44838712435F03600EC3DFE /* Preview Assets.xcassets */; };
 		D44838752435F03600EC3DFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D44838732435F03600EC3DFE /* LaunchScreen.storyboard */; };
-		D44838802435F03700EC3DFE /* iPodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D448387F2435F03700EC3DFE /* iPodTests.swift */; };
-		D448388B2435F03700EC3DFE /* iPodUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D448388A2435F03700EC3DFE /* iPodUITests.swift */; };
 		D448389B243614A600EC3DFE /* WheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D448389A243614A600EC3DFE /* WheelView.swift */; };
 		D448389D2436180700EC3DFE /* DisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D448389C2436180700EC3DFE /* DisplayView.swift */; };
 /* End PBXBuildFile section */
@@ -46,11 +44,7 @@
 		D44838742435F03600EC3DFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D44838762435F03600EC3DFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D448387B2435F03700EC3DFE /* iPodTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iPodTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D448387F2435F03700EC3DFE /* iPodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPodTests.swift; sourceTree = "<group>"; };
-		D44838812435F03700EC3DFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D44838862435F03700EC3DFE /* iPodUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iPodUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D448388A2435F03700EC3DFE /* iPodUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPodUITests.swift; sourceTree = "<group>"; };
-		D448388C2435F03700EC3DFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D448389A243614A600EC3DFE /* WheelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelView.swift; sourceTree = "<group>"; };
 		D448389C2436180700EC3DFE /* DisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,8 +78,6 @@
 			isa = PBXGroup;
 			children = (
 				D44838672435F03200EC3DFE /* iPod */,
-				D448387E2435F03700EC3DFE /* iPodTests */,
-				D44838892435F03700EC3DFE /* iPodUITests */,
 				D44838662435F03200EC3DFE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -122,24 +114,6 @@
 				D44838712435F03600EC3DFE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		D448387E2435F03700EC3DFE /* iPodTests */ = {
-			isa = PBXGroup;
-			children = (
-				D448387F2435F03700EC3DFE /* iPodTests.swift */,
-				D44838812435F03700EC3DFE /* Info.plist */,
-			);
-			path = iPodTests;
-			sourceTree = "<group>";
-		};
-		D44838892435F03700EC3DFE /* iPodUITests */ = {
-			isa = PBXGroup;
-			children = (
-				D448388A2435F03700EC3DFE /* iPodUITests.swift */,
-				D448388C2435F03700EC3DFE /* Info.plist */,
-			);
-			path = iPodUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,7 +259,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D44838802435F03700EC3DFE /* iPodTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,7 +266,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D448388B2435F03700EC3DFE /* iPodUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
