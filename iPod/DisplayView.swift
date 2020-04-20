@@ -1,6 +1,5 @@
 //
 //  DisplayView.swift
-//  Copyright © 2020 d1v1b.com All rights reserved.
 //
 
 import SwiftUI
@@ -10,30 +9,32 @@ struct DisplayView: View {
     @Binding var menuIndex: Int    
     
     var body: some View {
-        VStack (alignment: .leading, spacing: 0) {
-            Text("iPod")
-                .font(.system(size: 25))
-                .frame(width: UIScreen.main.bounds.width * 0.95, height: 30.0)
-                .background(Color.gray)
-            ForEach(menus) { menu in
-                HStack () {
-                    Text(menu.name)
-                        .font(.system(size: 25))
-                    Spacer()
-                    if (menu.next){
-                        Image(systemName: "chevron.right")
+        GeometryReader { geometry in
+            VStack (alignment: .leading, spacing: 0) {
+                Text("iPod")
+                    .font(.system(size: 25))
+                    .frame(width: geometry.size.width * 0.95, height: 30.0)
+                    .background(Color.gray)
+                ForEach(self.menus) { menu in
+                    HStack () {
+                        Text(menu.name)
+                            .font(.system(size: 25))
+                        Spacer()
+                        if (menu.next){
+                            Image(systemName: "chevron.right")
+                        }
                     }
+                    .padding(.horizontal, 5)
+                    .foregroundColor(menu.id == self.menuIndex ? .white : .black)
+                    .background(menu.id == self.menuIndex ? Color.blue : Color.white)
                 }
-                .padding(.horizontal, 5)
-                .foregroundColor(menu.id == self.menuIndex ? .white : .black)
-                .background(menu.id == self.menuIndex ? Color.blue : Color.white)
+                Spacer()
             }
-            Spacer()
+            .background(Color.white)
+            .frame(width: geometry.size.width * 0.95, height: 300)
+            .clipShape(RoundedRectangle(cornerRadius: 5))
+            .overlay(RoundedRectangle(cornerRadius: 5).stroke(lineWidth: 2).foregroundColor(Color.gray))
         }
-        .background(Color.white)
-        .frame(width: UIScreen.main.bounds.width * 0.95, height: 300)
-        .clipShape(RoundedRectangle(cornerRadius: 5))
-        .overlay(RoundedRectangle(cornerRadius: 5).stroke(lineWidth: 2).foregroundColor(Color.gray))
     }
 }
 
