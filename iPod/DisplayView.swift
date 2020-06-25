@@ -9,32 +9,31 @@ struct DisplayView: View {
     @Binding var menuIndex: Int    
     
     var body: some View {
-        GeometryReader { geometry in
-            VStack (alignment: .leading, spacing: 0) {
-                Text("iPod")
-                    .font(.system(size: 25))
-                    .frame(width: geometry.size.width * 0.95, height: 30.0)
-                    .background(Color.gray)
-                ForEach(self.menus) { menu in
-                    HStack () {
-                        Text(menu.name)
-                            .font(.system(size: 25))
-                        Spacer()
-                        if (menu.next){
-                            Image(systemName: "chevron.right")
-                        }
+        VStack (spacing: 0) {
+            Text("iPod")
+                .font(.system(size: 25))
+                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 30, maxHeight: 30)
+                .background(Color.gray)
+            ForEach(self.menus) { menu in
+                HStack () {
+                    Text(menu.name)
+                        .font(.system(size: 25))
+                    Spacer()
+                    if (menu.next){
+                        Image(systemName: "chevron.right")
                     }
-                    .padding(.horizontal, 5)
-                    .foregroundColor(menu.id == self.menuIndex ? .white : .black)
-                    .background(menu.id == self.menuIndex ? Color.blue : Color.white)
                 }
-                Spacer()
+                .padding(.horizontal, 5)
+                .foregroundColor(menu.id == self.menuIndex ? .white : .black)
+                .background(menu.id == self.menuIndex ? Color.blue : Color.white)
             }
-            .background(Color.white)
-            .frame(width: geometry.size.width * 0.95, height: 300)
-            .clipShape(RoundedRectangle(cornerRadius: 5))
-            .overlay(RoundedRectangle(cornerRadius: 5).stroke(lineWidth: 2).foregroundColor(Color.gray))
+            Spacer()
         }
+        .background(Color.white)
+        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 300, maxHeight: 300)
+        .clipShape(RoundedRectangle(cornerRadius: 5))
+        .overlay(RoundedRectangle(cornerRadius: 5).stroke(lineWidth: 2).foregroundColor(Color.gray))
+        .padding(.horizontal)
     }
 }
 

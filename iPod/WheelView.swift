@@ -16,12 +16,12 @@ struct WheelView: View {
         GeometryReader { geometry in
             ZStack () {
                 Circle()
-                    .frame(width: geometry.size.width * 0.9, height: geometry.size.width * 0.9)
+                    .frame(width: geometry.size.width, height: geometry.size.width)
                     .foregroundColor(Color("wheel"))
                     .gesture(DragGesture()
                         .onChanged{ v in
                             // 回転角を計算する
-                            var angle = atan2(v.location.x - geometry.size.width * 0.9 / 2, geometry.size.width * 0.9 / 2 - v.location.y) * 180 / .pi
+                            var angle = atan2(v.location.x - geometry.size.width / 2, geometry.size.width / 2 - v.location.y) * 180 / .pi
                             if (angle < 0) { angle += 360 }
                             // 回転差分を計算する
                             let theta = self.lastAngle - angle
@@ -59,21 +59,22 @@ struct WheelView: View {
                 Text("MENU")
                     .font(.title)
                     .foregroundColor(.white)
-                    .offset(y: -140)
+                    .offset(y: -150)
                 Image(systemName: "playpause.fill")
                     .font(.title)
                     .foregroundColor(.white)
-                    .offset(y: 140)
+                    .offset(y: 150)
                 Image(systemName: "forward.end.alt.fill")
                     .font(.title)
                     .foregroundColor(.white)
-                    .offset(x: 140)
+                    .offset(x: 150)
                 Image(systemName: "backward.end.alt.fill")
                     .font(.title)
                     .foregroundColor(.white)
-                    .offset(x: -140)
+                    .offset(x: -150)
             }
-        }
+        }.padding(.horizontal)
+        .padding(.top, 30)
     }
 }
 
